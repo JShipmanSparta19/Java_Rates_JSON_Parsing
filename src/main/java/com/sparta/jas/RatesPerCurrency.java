@@ -14,6 +14,10 @@ public class RatesPerCurrency {
         rates = ratesParser.getRates();
     }
 
+    public JSONObject getRates() {
+        return rates;
+    }
+
     public String getConversionRate(String key){
         return rates.get(key).toString();
     }
