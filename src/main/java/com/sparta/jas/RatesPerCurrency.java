@@ -18,7 +18,13 @@ public class RatesPerCurrency {
         return rates;
     }
 
-    public String getConversionRate(String key){
-        return rates.get(key).toString();
+    public double getConversionRate(String key){
+        if (!rates.get(key).toString().contains(".")){
+            long longRate = (Long) rates.get(key);
+            double doubleRate = longRate;
+            return doubleRate;
+        } else {
+            return (Double) rates.get(key);
+        }
     }
 }

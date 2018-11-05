@@ -19,8 +19,8 @@ public class RatesParser {
         return getJSONValue("success").toString();
     }
 
-    public String getTimestamp(){
-        return getJSONValue("timestamp").toString();
+    public long getTimestamp(){
+        return (Long) getJSONValue("timestamp");
     }
 
     public String getBaseCurrency(){
@@ -33,5 +33,9 @@ public class RatesParser {
 
     public JSONObject getRates() {
         return (JSONObject) getJSONValue("rates");
+    }
+
+    public JSONObject getRatesFullFile() {
+        return ratesFullFile;
     }
 }
